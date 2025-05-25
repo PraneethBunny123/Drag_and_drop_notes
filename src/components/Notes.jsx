@@ -6,12 +6,12 @@ export default function Notes({notes, setNotes}) {
 
     useEffect(() => {
         //local storage
-        const savedNotes = JSON.parse(localStorage.getItem('notes'))
+        const savedNotes = JSON.parse(localStorage.getItem('notes')) || []
 
         const updatedNotes = notes.map(note => {
-            const savedNotes = null
-            if(savedNotes) {
-                return {}
+            const savedNote = savedNotes.find(n => n.id === note.id)
+            if(savedNote) {
+                return {...note, position: savedNote.position}
             }else {
                 const position = determineNewPosition()
                 return {...note, position}
