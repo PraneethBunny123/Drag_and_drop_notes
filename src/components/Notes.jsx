@@ -24,7 +24,11 @@ export default function Notes({notes, setNotes}) {
     return (
         <div>
             {notes.map(note => (
-                <Note key={note.id} content={note.text} />
+                <Note 
+                    key={note.id} 
+                    content={note.text} 
+                    initialPosition={note.position}    
+                />
             ))}
         </div>
     )

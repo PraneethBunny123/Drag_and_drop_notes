@@ -1,10 +1,10 @@
-export default function Note({content, ...props}) {
+export default function Note({content, initialPosition, ...props}) {
     return (
         <div
             style={{
                 position: "absolute",
-                left: 0,
-                right: 0,
+                left: `${initialPosition?.x}px`,
+                top: `${initialPosition?.y}px`,
                 border: "1px solid black",
                 userSelect: "none",
                 padding: '10px',
