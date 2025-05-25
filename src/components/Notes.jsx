@@ -16,7 +16,9 @@ export default function Notes({notes, setNotes}) {
                 return {...note, position}
             }
         })
-    }, [])
+
+        setNotes(updatedNotes)
+    }, [notes])
 
 
     return (
