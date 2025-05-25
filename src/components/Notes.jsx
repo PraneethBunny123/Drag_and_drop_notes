@@ -18,7 +18,7 @@ export default function Notes({notes, setNotes}) {
         })
 
         setNotes(updatedNotes)
-    }, [notes])
+    }, [notes.length])
 
 
     return (
