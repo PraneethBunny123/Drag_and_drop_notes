@@ -5,7 +5,8 @@ import determineNewPosition from "./determineNewPosition"
 export default function Notes({notes, setNotes}) {
 
     useEffect(() => {
-        const savedNotes = []
+        //local storage
+        const savedNotes = JSON.parse(localStorage.getItem('notes'))
 
         const updatedNotes = notes.map(note => {
             const savedNotes = null
@@ -18,6 +19,7 @@ export default function Notes({notes, setNotes}) {
         })
 
         setNotes(updatedNotes)
+        localStorage.setItem('notes', JSON.stringify(updatedNotes))
     }, [notes.length])
 
 
