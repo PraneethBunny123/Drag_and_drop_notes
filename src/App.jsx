@@ -1,8 +1,11 @@
 // import './App.css'
+import { DUMMY_DATA } from "./components/DUMMY_DATA"
 
 function App() {
+
+    
     return (
-        <div className="text-3xl font-bold underline">
+        <div>
             hello
         </div>
     )
