@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { createRef, useEffect, useRef } from "react"
 import Note from "./Note"
 import determineNewPosition from "./determineNewPosition"
 
@@ -22,12 +22,20 @@ export default function Notes({notes, setNotes}) {
         localStorage.setItem('notes', JSON.stringify(updatedNotes))
     }, [notes.length])
 
+    const noteRefs = useRef([])
+
+    console.log(noteRefs)
+
 
     return (
         <div>
             {notes.map(note => (
                 <Note 
-                    key={note.id} 
+                    key={note.id}
+                    ref={noteRefs.current[note.id] ? 
+                        noteRefs.current[note.id] : 
+                        (noteRefs.current[note.id] = createRef())
+                    } 
                     content={note.text} 
                     initialPosition={note.position}    
                 />
