@@ -1,4 +1,6 @@
-export default function Note({content, initialPosition, ...props}) {
+import { forwardRef } from "react"
+
+const Note = ({content, initialPosition, ...props}) => {
     return (
         <div
             style={{
@@ -18,3 +20,5 @@ export default function Note({content, initialPosition, ...props}) {
         </div>
     )
 }
+
+export default Note;

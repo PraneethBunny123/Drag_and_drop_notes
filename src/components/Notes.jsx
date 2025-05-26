@@ -24,7 +24,11 @@ export default function Notes({notes, setNotes}) {
     }, [notes.length])
 
     function handleDragStart(note, e) {
+        const {id} = note.id
 
+        const noteRef = noteRefs.current[note.id].current
+        const rect = noteRef.getBoundingClientRect()
+        console.log(rect)
     }
 
     return (
