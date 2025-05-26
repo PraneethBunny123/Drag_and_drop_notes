@@ -38,7 +38,8 @@ export default function Notes({notes, setNotes}) {
         }
 
         function handleMouseUp() {
-
+            document.removeEventListener("mousemove", handleMouseMove)
+            document.removeEventListener("mouseup", handleMouseUp)
         }
 
         document.addEventListener("mousemove", handleMouseMove)
