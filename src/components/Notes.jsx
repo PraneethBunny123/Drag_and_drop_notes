@@ -3,6 +3,7 @@ import Note from "./Note"
 import determineNewPosition from "./determineNewPosition"
 
 export default function Notes({notes, setNotes}) {
+    const noteRefs = useRef([])
 
     useEffect(() => {
         //local storage
@@ -22,10 +23,9 @@ export default function Notes({notes, setNotes}) {
         localStorage.setItem('notes', JSON.stringify(updatedNotes))
     }, [notes.length])
 
-    const noteRefs = useRef([])
+    function handleDragStart(note, e) {
 
-    console.log(noteRefs)
-
+    }
 
     return (
         <div>
@@ -37,7 +37,8 @@ export default function Notes({notes, setNotes}) {
                         (noteRefs.current[note.id] = createRef())
                     } 
                     content={note.text} 
-                    initialPosition={note.position}    
+                    initialPosition={note.position}   
+                    onMouseDown={(e) => handleDragStart(note, e)} 
                 />
             ))}
         </div>
