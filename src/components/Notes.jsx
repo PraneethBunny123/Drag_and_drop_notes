@@ -34,7 +34,11 @@ export default function Notes({notes, setNotes}) {
         const startPos = note
 
         function handleMouseMove() {
+            const newX = e.clientX - offsetX
+            const newY = e.clientY - offsetY
 
+            noteRef.style.left = `${newX}px`
+            noteRef.style.top = `${newY}px`
         }
 
         function handleMouseUp() {
