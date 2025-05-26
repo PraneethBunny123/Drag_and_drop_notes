@@ -33,7 +33,18 @@ export default function Notes({notes, setNotes}) {
 
         const startPos = note
 
-        
+        function handleMouseMove() {
+
+        }
+
+        function handleMouseUp() {
+
+        }
+
+        document.addEventListener("mousemove", handleMouseMove)
+        document.addEventListener("mouseup", handleMouseUp)
+
+
     }
 
     return (
